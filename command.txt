@@ -1,0 +1,136 @@
+Question 1: Create and Commit a New File-----------------------
+
+# Navigate to your repository
+cd path/to/your/repository
+
+# Create a new file and add content
+echo "Hello, GitHub!" > hello.txt
+
+# Check file status
+git status
+
+# Add file to staging
+git add hello.txt
+
+# Commit the changes
+git commit -m "Added hello.txt with initial content"
+
+Question 2: Push Changes to GitHub------------------------------
+
+# Ensure you are in the repository
+git status
+
+# Push changes
+git push origin main
+
+Question 3: Create a New Branch and Merge-----------------------
+
+# Create and switch to a new branch
+git checkout -b feature-branch
+
+# Modify hello.txt
+echo "Welcome to GitHub!" >> hello.txt
+
+# Add and commit changes
+git add hello.txt
+git commit -m "Updated hello.txt with a welcome message"
+
+# Switch back to main
+git checkout main
+
+# Merge feature-branch into main
+git merge feature-branch
+
+# Push merged changes
+git push origin main
+
+Question 4: Resolve Merge Conflicts-------------------------------
+
+# Modify hello.txt in main and commit
+echo "Main branch update" >> hello.txt
+git add hello.txt
+git commit -m "Updated hello.txt in main branch"
+
+# Switch to feature-branch, modify and commit
+git checkout feature-branch
+echo "Feature branch update" >> hello.txt
+git add hello.txt
+git commit -m "Updated hello.txt in feature branch"
+
+# Switch back to main
+git checkout main
+
+# Merge feature-branch into main (will create a conflict)
+git merge feature-branch
+
+#for resolving Conflicts open in code editor
+code .
+
+# Add and commit resolved file
+git add hello.txt
+git commit -m "Resolved merge conflict in hello.txt"
+
+# Push changes
+git push origin main
+
+Question 5: Create and Use a .gitignore File---------------------
+
+# Create .gitignore
+echo "*.log" > .gitignore
+
+# Check status
+git status
+
+# Add and commit .gitignore
+git add .gitignore
+git commit -m "Added .gitignore to ignore log files"
+
+# Push changes
+git push origin main
+
+Question 6: Revert a Commit--------------------------------------
+
+# View commit history to get the commit hash
+git log --oneline
+
+# Revert the commit (replace <commit-hash> with actual hash)
+git revert <commit-hash>
+
+# Push the changes
+git push origin main
+
+Question 7: View Commit History------------------------------------
+
+# View commit history
+git log
+
+# Compact version
+git log --oneline --graph --decorate --all
+
+Question 8: Stash Changes-----------------------------------------
+
+# Modify any file
+echo "Temporary change" >> hello.txt
+
+# Stash changes
+git stash
+
+# View stash list
+git stash list
+
+# Apply last stashed change
+git stash apply
+
+Question 9: Delete a Branch---------------------------------------
+
+# Delete local branch
+git branch -d feature-branch
+
+
+Question 10: Amend the Last Commit--------------------------------
+
+# Amend last commit message
+git commit --amend -m "Updated commit message"
+
+# If already pushed, force push
+git push --force origin main
